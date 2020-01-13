@@ -24,7 +24,6 @@ if (somma % 2 == 0) {
   console.log("la somma è pari")
 } else {
   var vincita = "dispari";
-  verificaVincita(sceltaUtente, vincita);
   console.log("la somma è dispari")
   document.getElementById("risultato-somma").innerHTML = " La somma restituisce un numero dispari";
 
