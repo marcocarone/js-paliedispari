@@ -5,7 +5,7 @@
 // vinto (controlliamo se la somma da pari o dispari).
 var nomeUtente = prompt("Scrivi il tuo nome");
 var sceltaUtente = prompt("Scegli pari o dispari");
-while (sceltaUtente != "pari" && sceltaUtente != "dispari" ) {
+while (sceltaUtente != "pari" && sceltaUtente != "dispari") {
   sceltaUtente = prompt("Per favore, scrivi correttamente la tua scelta: se 'pari' o 'dispari'");
 }
 var numeroUtente = parseInt(prompt("Ora scegli un numero da 1 a 5"));
@@ -20,31 +20,25 @@ console.log("somma " + somma);
 
 if (somma % 2 == 0) {
   var vincita = "pari";
-  verificaVincita(sceltaUtente, vincita);
-  document.getElementById("risultato-somma").innerHTML = " La somma dei due numeri è pari";
+  document.getElementById("risultato-somma").innerHTML = " La somma restituisce un numero pari";
   console.log("la somma è pari")
 } else {
   var vincita = "dispari";
   verificaVincita(sceltaUtente, vincita);
   console.log("la somma è dispari")
-  document.getElementById("risultato-somma").innerHTML = " La somma dei due numeri è dispari";
+  document.getElementById("risultato-somma").innerHTML = " La somma restituisce un numero dispari";
 
 };
 
+if (sceltaUtente == vincita) {
+  document.getElementById("azione").innerHTML = nomeUtente + " hai vinto";
+} else {
+  document.getElementById("azione").innerHTML = nomeUtente + " hai perso";
+}
 
 function generaNumeroRandom(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
-function verificaVincita(scelta, vincita) {
-  if (scelta == vincita ) {
-    return document.getElementById("azione").innerHTML = nomeUtente + " hai vinto";
-  } else {
-    return document.getElementById("azione").innerHTML = nomeUtente + " hai perso";
-  }
-}
-
 
 document.getElementById("scelta-utente").innerHTML = sceltaUtente + " è la tua scelta";
 document.getElementById("numero-utente").innerHTML = numeroUtente + " è il numero che hai scelto";
